@@ -23,12 +23,12 @@
 		<servlet-name>SimpleServlet</servlet-name>
 		<url-pattern>/home</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>ControllerServlet</servlet-name>
 		<servlet-class>org.hellboy.ControllerServlet</servlet-class>
 	</servlet>
-	
+
 	<servlet-mapping>
 		<servlet-name>ControllerServlet</servlet-name>
 		<url-pattern>*.do</url-pattern>
@@ -36,4 +36,32 @@
 	<error-page>
 		<location>/WEB-INF/errorPage.jsp</location>
 	</error-page>
+
+	<servlet>
+		<servlet-name>HelloForm</servlet-name>
+		<servlet-class>org.hellboy.LatestServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>HelloForm</servlet-name>
+		<url-pattern>/helloForm</url-pattern>
+	</servlet-mapping>
+	
+	<!-- <servlet>
+		<servlet-name>AsyncServlet</servlet-name>
+		<servlet-class>org.hellboy.FirstAsyncServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AsyncServlet</servlet-name>
+		<url-pattern>/async</url-pattern>
+	</servlet-mapping> -->
+	
+	<listener>
+		<listener-class>events.AppListener</listener-class>
+	</listener>
+	
+	<session-config>
+		<session-timeout>1</session-timeout>
+	</session-config>
+
 </web-app>
